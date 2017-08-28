@@ -1,0 +1,1 @@
+../../lezione18/esempi_syscall/open.c

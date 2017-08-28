@@ -1,0 +1,27 @@
+rm -f setuid
+make setuid
+
+echo PRIMA DI ESEGUIRLO
+ls -l setuid
+echo PRIMA ESECUZIONE
+./setuid # > setuid.1 2>&1
+echo DOPO PRIMA ESECUZIONE
+ls -l setuid
+
+echo ""
+sudo chown root setuid
+echo DOPO CHOWN ROOT
+ls -l setuid
+echo SECONDA ESECUZIONE
+./setuid # > setuid.2 2>&1
+echo DOPO SECONDA ESECUZIONE
+ls -l setuid
+
+echo ""
+sudo chmod 4755 setuid
+echo DOPO CHMOD 4755
+ls -l setuid
+echo TERZA ESECUZIONE
+./setuid # > setuid.3 2>&1
+echo DOPO TERZA ESECUZIONE
+ls -l setuid
